@@ -3,6 +3,8 @@
 # A random passwrod generator 
 ![passWord Generater](03-javascript-homework-demo.png)
 
+## The github page link https://grandbearsleepy.github.io/home_wk3/
+
 ## User can choose what kind of characters in their password by followed window prompt and confirm.
 
 ## The password length must be indicated, and the number is between 8 and 128 characters.
