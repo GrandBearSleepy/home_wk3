@@ -24,7 +24,7 @@ function generatePassword() {
   // Let user input generated password length
 
 
-  var passWordLength = prompt("Please enter valid number between 8 and 128");
+  var passWordLength = prompt("Please enter valid password length between 8 and 128");
 
   //Input validation
 
@@ -33,7 +33,7 @@ function generatePassword() {
     if (passWordLength < 8 || passWordLength > 128 || passWordLength === null) {
       alert("Please enter valid number between 8 and 128");
       passWordLength = 0;
-      passWordLength = prompt("Please enter valid number between 8 and 128");
+      passWordLength = prompt("Please enter valid password length between 8 and 128");
     }
     else break;
   }
@@ -47,7 +47,7 @@ function generatePassword() {
   // Let user input criteria letter
 
 
-  var criteriaLetter = prompt("Please input ONE criteria letter:");
+  var criteriaLetter = prompt("Please input ONE criteria character:");
 
   // User input validation
   while (true) {
@@ -57,13 +57,13 @@ function generatePassword() {
       break;
     }
     else if (criteriaLetter.trim() == "" || criteriaLetter.trim().length != 1) {
-      alert("Wrong input! Try again.");
+      alert("Error input! Try again.");
       criteriaLetter = "";
-      criteriaLetter = prompt("Please input ONE criteria letter:");
+      criteriaLetter = prompt("Please input ONE criteria character:");
 
     }
     else {
-      alert("Your chose " + criteriaLetter + " for criteria letter.");
+      alert("Your chose " + criteriaLetter + " for criteria character.");
       break;
     }
   }
@@ -181,26 +181,6 @@ function generatePassword() {
   return createdPassword;
 
 }
-
-
-
-
-// if (createdPassword.length = passWordLength) break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
