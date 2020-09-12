@@ -35,27 +35,6 @@ function generatePassword() {
   }
   alert("Your password length is: " + passWordLength);
 
-  // Let user input criteria letter
-  var criteriaLetter = prompt("Please input ONE criteria character:");
-
-  // User input validation
-  while (true) {
-    //User click cancle
-    if (criteriaLetter === null) {
-      alert("You chose nothing!");
-      break;
-    }
-    else if (criteriaLetter.trim() == "" || criteriaLetter.trim().length != 1) {
-      alert("Error input! Try again.");
-      criteriaLetter = "";
-      criteriaLetter = prompt("Please input ONE criteria character:");
-    }
-    else {
-      alert("Your chose " + criteriaLetter + " for criteria character.");
-      break;
-    }
-  }
-
   //Let user confirm if include numeric
   var includeNumeric = confirm("Would you like include some numeric?")
   if (includeNumeric == true) {
@@ -104,12 +83,6 @@ function generatePassword() {
   //An array for store combined all user indecated characters
   var selectedPasswordPool = [];
 
-  //If user input a criteria letter, generate a criteria letter, add in createdPassword.
-  if (criteriaLetter !== null) {
-    createdPassword += criteriaLetter;
-    selectedPasswordPool.push(criteriaLetter);
-  }
-
   //If user confirm include numeric character, generate one numeric character, add in createdPassword.
   if (includeNumeric == true) {
     createdPassword += getRandomCharacter(numericArray);
@@ -144,8 +117,8 @@ function generatePassword() {
     }
     //if none of the conditions has been chosen, generate a random pasword from all the arrays.
     else {
-      selectedPasswordPool = selectedPasswordPool.concat(numericArray).concat(lowerCaseArray).concat(upperCaseArray).concat(specialArray);
-      createdPassword += getRandomCharacter(selectedPasswordPool);
+      createdPassword = "Please choose at least ONE criteria character to generate password! Click the \"Generate Password\" button to restart this program!";
+      break;
     }
   }
 
@@ -154,6 +127,5 @@ function generatePassword() {
   // Return the final result to fuction.
   return createdPassword;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
