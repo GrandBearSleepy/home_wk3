@@ -20,16 +20,12 @@ function generatePassword() {
   var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", ".", "?"];
 
-
   // Let user input generated password length
-
 
   var passWordLength = prompt("Please enter valid password length between 8 and 128");
 
   //Input validation
-
   while (true) {
-
     if (passWordLength < 8 || passWordLength > 128 || passWordLength === null) {
       alert("Please enter valid number between 8 and 128");
       passWordLength = 0;
@@ -39,14 +35,7 @@ function generatePassword() {
   }
   alert("Your password length is: " + passWordLength);
 
-
-
-
-
-
   // Let user input criteria letter
-
-
   var criteriaLetter = prompt("Please input ONE criteria character:");
 
   // User input validation
@@ -60,16 +49,12 @@ function generatePassword() {
       alert("Error input! Try again.");
       criteriaLetter = "";
       criteriaLetter = prompt("Please input ONE criteria character:");
-
     }
     else {
       alert("Your chose " + criteriaLetter + " for criteria character.");
       break;
     }
   }
-
-
-
 
   //Let user confirm if include numeric
   var includeNumeric = confirm("Would you like include some numeric?")
@@ -107,7 +92,6 @@ function generatePassword() {
     alert("You don't want special character in your password");
   }
 
-
   // Get a random character from a array
   function getRandomCharacter(arr) {
     var arrLen = arr.length;
@@ -115,14 +99,10 @@ function generatePassword() {
     return arr[randomIndex];
   }
 
-
-
   //A string for store at least one user indecated character
   var createdPassword = "";
   //An array for store combined all user indecated characters
   var selectedPasswordPool = [];
-
-
 
   //If user input a criteria letter, generate a criteria letter, add in createdPassword.
   if (criteriaLetter !== null) {
@@ -154,14 +134,10 @@ function generatePassword() {
     selectedPasswordPool = selectedPasswordPool.concat(specialArray);
   }
 
-
-
-
   //Get the length difference between createdPassword length and user inputed length.
   var restLength = parseInt(passWordLength) - createdPassword.length
 
   //Use loop generate the rest password from selectedPasswordPool and add to createdPassword.
-
   for (var i = 0; i < (restLength); i++) {
     if (selectedPasswordPool.length !== 0) {
       createdPassword += getRandomCharacter(selectedPasswordPool);
