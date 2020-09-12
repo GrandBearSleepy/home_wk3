@@ -149,16 +149,11 @@ function generatePassword() {
     }
   }
 
-
   //TODO randomCreatedPassword();
-
 
   // Return the final result to fuction.
   return createdPassword;
-
 }
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
